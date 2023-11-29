@@ -31,12 +31,12 @@ let kingRichard = { Title = "King Richard"; RunLength = 144; Genre = Sport; Dire
 let licoricePizza = { Title = "Licorice Pizza"; RunLength = 133; Genre = Comedy; Director = { Name = "Paul Thomas Anderson"; MoviesDirected = 49 }; IMDBRating = 7.4 }
 let nightmareAlley = { Title = "Nightmare Alley"; RunLength = 150; Genre = Thriller; Director = { Name = "Guillermo Del Toro"; MoviesDirected = 22 }; IMDBRating = 7.1 }
 
-// Example
-printfn "Movie: %s, Run Length: %d minutes, Genre: %A, Director: %s, IMDB Rating: %.1f" coda.Title coda.RunLength coda.Genre coda.Director.Name coda.IMDBRating
-printfn "Movie: %s, Run Length: %d minutes, Genre: %A, Director: %s, IMDB Rating: %.1f" belfast.Title belfast.RunLength belfast.Genre belfast.Director.Name belfast.IMDBRating
-printfn "Movie: %s, Run Length: %d minutes, Genre: %A, Director: %s, IMDB Rating: %.1f" dontLookUp.Title dontLookUp.RunLength dontLookUp.Genre dontLookUp.Director.Name dontLookUp.IMDBRating
-printfn "Movie: %s, Run Length: %d minutes, Genre: %A, Director: %s, IMDB Rating: %.1f" driveMyCar.Title driveMyCar.RunLength driveMyCar.Genre driveMyCar.Director.Name driveMyCar.IMDBRating
-printfn "Movie: %s, Run Length: %d minutes, Genre: %A, Director: %s, IMDB Rating: %.1f" dune.Title dune.RunLength dune.Genre dune.Director.Name dune.IMDBRating
-printfn "Movie: %s, Run Length: %d minutes, Genre: %A, Director: %s, IMDB Rating: %.1f" kingRichard.Title kingRichard.RunLength kingRichard.Genre kingRichard.Director.Name kingRichard.IMDBRating
-printfn "Movie: %s, Run Length: %d minutes, Genre: %A, Director: %s, IMDB Rating: %.1f" licoricePizza.Title licoricePizza.RunLength licoricePizza.Genre licoricePizza.Director.Name licoricePizza.IMDBRating
-printfn "Movie: %s, Run Length: %d minutes, Genre: %A, Director: %s, IMDB Rating: %.1f" nightmareAlley.Title nightmareAlley.RunLength nightmareAlley.Genre nightmareAlley.Director.Name nightmareAlley.IMDBRating
+// Creating a list of movies
+let movieList = [coda; belfast; dontLookUp; driveMyCar; dune; kingRichard; licoricePizza; nightmareAlley]
+
+// printing details of all movies in the list
+movieList
+|> List.iter (fun movie ->
+    printfn "Movie: %s, Run Length: %d minutes, Genre: %A, Director: %s, IMDB Rating: %.1f"
+        movie.Title movie.RunLength movie.Genre movie.Director.Name movie.IMDBRating
+)
