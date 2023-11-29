@@ -1,9 +1,8 @@
 ﻿// Define the discriminated union for movie genres
 type Genre =
-    | Horror
     | Drama
-    | Thriller
     | Comedy
+    | Thriller
     | Fantasy
     | Sport
 
@@ -22,12 +21,22 @@ type Movie = {
     IMDBRating: float
 }
 
-// Example usage:
-let ramBabuGurung = { Name = "Ram Babu Gurung"; MoviesDirected = 5 }
-let pardon = { Title = "Pardeshi"; RunLength = 120; Genre = Drama; Director = ramBabuGurung; IMDBRating = 7.5 }
-let kabbadi = { Title = "Kabbadi Kabbadi Kabbadi"; RunLength = 110; Genre = Comedy; Director = ramBabuGurung; IMDBRating = 8.2 }
+// Create movie instances
+let coda = { Title = "CODA"; RunLength = 111; Genre = Drama; Director = { Name = "Sian Heder"; MoviesDirected = 9 }; IMDBRating = 8.1 }
+let belfast = { Title = "Belfast"; RunLength = 98; Genre = Comedy; Director = { Name = "Kenneth Branagh"; MoviesDirected = 23 }; IMDBRating = 7.3 }
+let dontLookUp = { Title = "Don't Look Up"; RunLength = 138; Genre = Comedy; Director = { Name = "Adam McKay"; MoviesDirected = 27 }; IMDBRating = 7.2 }
+let driveMyCar = { Title = "Drive My Car"; RunLength = 179; Genre = Drama; Director = { Name = "Ryusuke Hamaguchi"; MoviesDirected = 16 }; IMDBRating = 7.6 }
+let dune = { Title = "Dune"; RunLength = 155; Genre = Fantasy; Director = { Name = "Denis Villeneuve"; MoviesDirected = 24 }; IMDBRating = 8.1 }
+let kingRichard = { Title = "King Richard"; RunLength = 144; Genre = Sport; Director = { Name = "Reinaldo Marcus Green"; MoviesDirected = 151 }; IMDBRating = 7.5 }
+let licoricePizza = { Title = "Licorice Pizza"; RunLength = 133; Genre = Comedy; Director = { Name = "Paul Thomas Anderson"; MoviesDirected = 49 }; IMDBRating = 7.4 }
+let nightmareAlley = { Title = "Nightmare Alley"; RunLength = 150; Genre = Thriller; Director = { Name = "Guillermo Del Toro"; MoviesDirected = 22 }; IMDBRating = 7.1 }
 
-// Print the result
-printfn "Director: %s, Movies Directed: %d" ramBabuGurung.Name ramBabuGurung.MoviesDirected
-printfn "Movie: %s, Run Length: %d minutes, Genre: %A, Director: %s, IMDB Rating: %.1f" pardon.Title pardon.RunLength pardon.Genre ramBabuGurung.Name pardon.IMDBRating
-printfn "Movie: %s, Run Length: %d minutes, Genre: %A, Director: %s, IMDB Rating: %.1f" kabbadi.Title kabbadi.RunLength kabbadi.Genre ramBabuGurung.Name kabbadi.IMDBRating
+// Example
+printfn "Movie: %s, Run Length: %d minutes, Genre: %A, Director: %s, IMDB Rating: %.1f" coda.Title coda.RunLength coda.Genre coda.Director.Name coda.IMDBRating
+printfn "Movie: %s, Run Length: %d minutes, Genre: %A, Director: %s, IMDB Rating: %.1f" belfast.Title belfast.RunLength belfast.Genre belfast.Director.Name belfast.IMDBRating
+printfn "Movie: %s, Run Length: %d minutes, Genre: %A, Director: %s, IMDB Rating: %.1f" dontLookUp.Title dontLookUp.RunLength dontLookUp.Genre dontLookUp.Director.Name dontLookUp.IMDBRating
+printfn "Movie: %s, Run Length: %d minutes, Genre: %A, Director: %s, IMDB Rating: %.1f" driveMyCar.Title driveMyCar.RunLength driveMyCar.Genre driveMyCar.Director.Name driveMyCar.IMDBRating
+printfn "Movie: %s, Run Length: %d minutes, Genre: %A, Director: %s, IMDB Rating: %.1f" dune.Title dune.RunLength dune.Genre dune.Director.Name dune.IMDBRating
+printfn "Movie: %s, Run Length: %d minutes, Genre: %A, Director: %s, IMDB Rating: %.1f" kingRichard.Title kingRichard.RunLength kingRichard.Genre kingRichard.Director.Name kingRichard.IMDBRating
+printfn "Movie: %s, Run Length: %d minutes, Genre: %A, Director: %s, IMDB Rating: %.1f" licoricePizza.Title licoricePizza.RunLength licoricePizza.Genre licoricePizza.Director.Name licoricePizza.IMDBRating
+printfn "Movie: %s, Run Length: %d minutes, Genre: %A, Director: %s, IMDB Rating: %.1f" nightmareAlley.Title nightmareAlley.RunLength nightmareAlley.Genre nightmareAlley.Director.Name nightmareAlley.IMDBRating
