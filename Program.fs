@@ -31,12 +31,16 @@ let kingRichard = { Title = "King Richard"; RunLength = 144; Genre = Sport; Dire
 let licoricePizza = { Title = "Licorice Pizza"; RunLength = 133; Genre = Comedy; Director = { Name = "Paul Thomas Anderson"; MoviesDirected = 49 }; IMDBRating = 7.4 }
 let nightmareAlley = { Title = "Nightmare Alley"; RunLength = 150; Genre = Thriller; Director = { Name = "Guillermo Del Toro"; MoviesDirected = 22 }; IMDBRating = 7.1 }
 
-// Creating a list of movies
+// Create a list of movies
 let movieList = [coda; belfast; dontLookUp; driveMyCar; dune; kingRichard; licoricePizza; nightmareAlley]
 
-// printing details of all movies in the list
-movieList
+// Filter probable Oscar winners with an IMDB rating greater than 7.4
+let probableOscarWinners =
+    movieList
+    |> List.filter (fun movie -> movie.IMDBRating > 7.4)
+
+// Example usage: print details of probable Oscar winners
+probableOscarWinners
 |> List.iter (fun movie ->
-    printfn "Movie: %s, Run Length: %d minutes, Genre: %A, Director: %s, IMDB Rating: %.1f"
-        movie.Title movie.RunLength movie.Genre movie.Director.Name movie.IMDBRating
+    printfn "Probable Oscar Winner: %s, IMDB Rating: %.1f" movie.Title movie.IMDBRating
 )
